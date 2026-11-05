@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Midware's Website</title>
+        <link rel="stylesheet" href="make-it-pretty.css">
+    </head>
+<body>
+    <h1>Clicker Tracker</h1>
+
+<button id="clickButton">Press me</button>
+<button id="resetButton">Reset</button>
+
+<ul id="clickList"></ul>
+
+<script>
+    const clicks = [];
+
+    //runs the function below every time it's clicked
+    document.getElementById("clickButton").addEventListener("click", function() {
+        const now = new Date();
+
+        //adds a new entry to the clicks array with the time
+        clicks.push({ time: now.toLocaleTimeString() });
+
+        const list = document.getElementById("clickList");
+        const item = document.createElement("li");
+        item.textContent = "Click " + clicks.length + " - " + now.toLocaleTimeString();
+        list.appendChild(item);
+    });
+
+    //runs the function below when it's clicked
+    document.getElementById("resetButton").addEventListener("click", function() {
+        //empties the clicks array so the count starts over
+        clicks.length = 0;
+
+        //removes every list item from the page
+        document.getElementById("clickList").innerHTML = "";
+    });
+</script>
+
+    <footer>
+        <p id="copyright"></p>
+    </footer>
+
+    <script>
+        // generate copyright year
+        const copyright = document.getElementById("copyright");
+        copyright.innerHTML = "&copy; " + new Date().getFullYear() + " Midware's Website";
+    </script>
