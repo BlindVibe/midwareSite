@@ -3,18 +3,17 @@ export function getGap(state, ms) {
     if (state.lastPress === null) {
         return null;
     }
-    return ms;
+    return ms - state.lastPress;
 }
 
 //double-click percentage 
 export function getPercentage(state) {
-    return (state.doubleCount / state.clickCount * 100);
+    return (state.doubleCount / state.clickCount * 100).toFixed(1);
 }
 
 //Updates the three stats above the buttons
 export function updateStats(state) {
     document.getElementById("clickCount").textContent = "Clicks: " + state.clickCount;
-    clickCount--;
     document.getElementById("doubleCount").textContent = "Double-clicks: " + state.doubleCount;
     document.getElementById("percentage").textContent = "Double-click percentage: " + getPercentage(state) + "%";
 }

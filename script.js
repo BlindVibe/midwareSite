@@ -21,16 +21,14 @@ document.getElementById("clickButton").addEventListener("click", function() {
     const isDouble = gap !== null && gap < DOUBLE_CLICK_GAP && !state.lastWasDouble;
 
     if (isDouble) {
-        // The second press adds to the double count but not the click count
+        //second press adds to the double count
         state.doubleCount++;
         state.lastWasDouble = true;
     } else {
-        // Every other press counts as a new click
         state.clickCount++;
         state.lastWasDouble = false;
     }
 
-    // Saves this press's time so the next press can measure the gap
     state.lastPress = ms;
 
     // Builds the parts of the list entry
@@ -54,11 +52,9 @@ document.getElementById("clickButton").addEventListener("click", function() {
         parts.push(gap + " ms since last press");
     }
 
-    // Creates the list item and joins the parts into one line of text
     const item = document.createElement("li");
     item.textContent = parts.join(" - ");
 
-    // Makes double-click entries bold so they stand out
     if (isDouble) {
         item.classList.add("double");
     }
