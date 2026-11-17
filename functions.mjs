@@ -3,7 +3,7 @@ export function getGap(state, ms) {
     if (state.lastPress === null) {
         return null;
     }
-    return ms - state.lastPress;
+    return ms;
 }
 
 //double-click percentage 
