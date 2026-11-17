@@ -15,6 +15,6 @@ export function getPercentage(state) {
 export function updateStats(state) {
     document.getElementById("clickCount").textContent = "Clicks: " + state.clickCount;
     clickCount--;
-    document.getElementById("doubleClickCount").textContent = "Double-clicks: " + state.doubleCount;
+    document.getElementById("doubleCount").textContent = "Double-clicks: " + state.doubleCount;
     document.getElementById("percentage").textContent = "Double-click percentage: " + getPercentage(state) + "%";
 }

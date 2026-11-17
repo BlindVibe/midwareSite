@@ -23,15 +23,15 @@ test('percentage', () =>{
 
 test('update states', () => {
     const elements = {
-        clickStat: { textContent: '' },
-        doubleStat: { textContent: '' },
+        clickCount: { textContent: '' },
+        doubleCount: { textContent: '' },
         percentStat: { textContent: '' }
     };
     globalThis.document = { getElementById: (id) => elements[id] };
 
     updateStats({ clickCount: 4, doubleCount: 1 });
 
-    assert.strictEqual(elements.clickStat.textContent, 'Clicks: 4');
-    assert.strictEqual(elements.doubleStat.textContent, 'Double-clicks: 1');
+    assert.strictEqual(elements.clickCount.textContent, 'Clicks: 4');
+    assert.strictEqual(elements.doubleCount.textContent, 'Double-clicks: 1');
     assert.strictEqual(elements.percentStat.textContent, 'Double-click percentage: 25.0%');
 });
