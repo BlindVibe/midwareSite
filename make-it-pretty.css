@@ -25,7 +25,7 @@ h1 {
 #resetButton {
     position: sticky;
     top: 0;
-    background-color: #dc2626;
+    background-color: #26dc8d;
     border-radius: 8px;
     padding: 12px 28px;
     font-size: 1.1rem;
@@ -33,7 +33,7 @@ h1 {
 }
 
 #resetButton:hover {
-    background-color: #b91c1c;
+    background-color: #1cb958;
 }
 
 /*centers list*/
