@@ -8,12 +8,13 @@ export function getGap(state, ms) {
 
 //double-click percentage 
 export function getPercentage(state) {
-    return (state.doubleCount / state.clickCount * 100).toFixed(1);
+    return (state.doubleCount / state.clickCount * 100);
 }
 
 //Updates the three stats above the buttons
 export function updateStats(state) {
     document.getElementById("clickCount").textContent = "Clicks: " + state.clickCount;
+    clickCount--;
     document.getElementById("doubleClickCount").textContent = "Double-clicks: " + state.doubleCount;
     document.getElementById("percentage").textContent = "Double-click percentage: " + getPercentage(state) + "%";
 }
