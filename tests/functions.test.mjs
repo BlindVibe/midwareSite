@@ -7,7 +7,7 @@ test('gap between clicks', () =>{
     const state = {lastPress : 100};
     const gap = getGap(state, 150);
 
-    assert.deepStrictEqual(gap, '50');
+    assert.strictEqual(gap, '50');
 });
 
 test('percentage', () =>{
@@ -25,7 +25,7 @@ test('update states', () => {
     const elements = {
         clickCount: { textContent: '' },
         doubleCount: { textContent: '' },
-        percentStat: { textContent: '' }
+        percentage: { textContent: '' }
     };
     globalThis.document = { getElementById: (id) => elements[id] };
 
