@@ -7,7 +7,7 @@ test('gap between clicks', () =>{
     const state = {lastPress : 100};
     const gap = getGap(state, 150);
 
-    assert.strictEqual(gap, '50');
+    assert.strictEqual(gap, 50);
 });
 
 test('percentage', () =>{
@@ -22,6 +22,7 @@ test('percentage', () =>{
 });
 
 test('update states', () => {
+
     const elements = {
         clickCount: { textContent: '' },
         doubleCount: { textContent: '' },
@@ -33,5 +34,5 @@ test('update states', () => {
 
     assert.strictEqual(elements.clickCount.textContent, 'Clicks: 4');
     assert.strictEqual(elements.doubleCount.textContent, 'Double-clicks: 1');
-    assert.strictEqual(elements.percentStat.textContent, 'Double-click percentage: 25.0%');
+    assert.strictEqual(elements.percentage.textContent, 'Double-click percentage: 25.0%');
 });
